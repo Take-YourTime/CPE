@@ -23,8 +23,7 @@ int main()
 		cin.ignore();
 		getline(cin, name);
 		
-		if(dictionary.find(country) != dictionary.end())	dictionary[country]++;
-		else dictionary[country] = 1;
+		dictionary[country] += 1;
 	}
 	
 	for(auto it = dictionary.begin(); it != dictionary.end(); it++){
