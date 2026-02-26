@@ -30,9 +30,7 @@ int main()
 		{
 			if(str.size() == 0)	break;
 			
-			if(dictionary.find(str) == dictionary.end() ) dictionary[str] = 1.0;
-			else	dictionary[str] += 1.0;
-			
+			dictionary[str] += 1.0;	
 			count += 1.0;
 		}
 		
