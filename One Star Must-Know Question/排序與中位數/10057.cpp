@@ -24,13 +24,13 @@ int main()
 		int key = arr[middle]; // middle point
 		int count = 1;
 		
-		// find identical number - left
+		// find identical number -- left
 		for(int left = middle - 1; left >= 0; left--){
 			if(arr[left] == key) count++;
 			else break;
 		}
 		
-		// find identical number - right
+		// find identical number -- right
 		if(numbers % 2 == 0){
 			int key2 = arr[middle+1];
 			count++;
@@ -54,3 +54,4 @@ int main()
 	}
 	return 0;
 }
+
