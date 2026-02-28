@@ -1,0 +1,6 @@
+這題需要建立質數表以及digits prime list
+
+在建立質數表的同時，一邊去計算到當前數字總共的digits prime數量
+（一定要照麼做，不然會超時）
+
+最後輸出「到upper的digits prime數量」 - 「到lower的digits prime數量」 

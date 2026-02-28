@@ -1,0 +1,8 @@
+先建立質數表
+
+然後宣告一個vector來儲存prime pair，儲存方式可以是struct或是class
+
+接著遍歷質數表，假設一個質數值為n，那麼檢查n+2是不是也是質數，是的話就把它們丟到vector中存起來
+
+最後按照輸入的index輸出該prime pair即可
+

@@ -1,0 +1,34 @@
+首先把三個小朋友視為一個主角(A)和兩個配角(B,C)
+
+宣告一個三維dp	dp[index][d1][d2]
+index = 目前分配了幾顆糖果 
+d1(difference 1) =  A的糖果 – B的糖果
+d2(difference 2) =  A的糖果 – C的糖果
+
+接著以這個dp來記錄在
+分配了index顆糖果
+主角與兩個配角擁有的糖果差為d1和d2	的情況下
+
+繼續分配下去直到分配完所有糖果後，得到的所有最大糖果差的最小值(smallest d)。
+
+即為在當前條件下，以最公平的方式分配完後可以得到的最大糖果差。
+
+我們把所有的情況的紀錄完後，就可以知道最終答案了。
+
+==========
+
+
+If index = n, dp[index][d1][d2] = max(d1, d2)
+
+If index ≠ n, dp[index][d1][d2] = 
+	min(	dp[index+1][ d1+candy[index+1] ][ d2+candy[index+1] ], 
+		dp[index+1][ d1–candy[index+1] ][ d2’ ],
+		dp[index+1][ d1’ ][ d2 – candy[index+1] ] 	)
+----------
+d2’ = d2 + (candy[index+1] – d1), 	if d1 – candy[index+1] < 0
+d2’ = d2,				if d1 – candy[index+1] > 0 
+
+d1’ = d1 + (candy[index+1] – d2), 	if d2 – candy[index+1] < 0
+d1’ = d1,				if d2 – candy[index+1] > 0 
+
+範圍：0  ≦ index ≦ n 0 ≦ d1, d2 ≦ 32*n

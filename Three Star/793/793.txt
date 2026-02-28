@@ -1,0 +1,38 @@
+此題最麻煩的地方是處理空白行
+
+==========
+
+解法：
+
+分別以一個節點代表一部電腦
+
+每個節點都有一個list，該list所儲存的數列代表期可連接到的電腦
+
+當詢問是否兩台電腦間是否有連接時
+
+以遞迴的方式來解
+
+bool find(vector<int> link, int key, vector<bool>& search)
+{
+	for (int i = 0; i < link.size(); i++)
+	{
+		if (!search[ link[i] ])
+		{
+			search[ link[i] ] = true;
+			if (link[i] == key)
+				return true;
+			else if ( find(pc[ link[i] ].connect, key, search) )
+				return true;
+		}
+	}
+
+	return false;
+}
+
+其中search = true的話，表示已經檢查過的電腦，此陣列可以減少檢查的次數
+
+我們先檢查當前電腦所連接的所有電腦是否為所求
+
+在檢查當前電腦連接電腦的連接電腦，依次下去直到檢查完所有連接的電腦
+
+最後記錄檢查的電腦是否有連接即可

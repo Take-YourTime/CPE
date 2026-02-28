@@ -1,0 +1,18 @@
+定義almost prime為因數只有自己、1和一個質數的合數
+
+給定一個範圍，是求這個範圍內有多少almost prime？
+
+==========
+
+首先建立質數表，並在建立質數表時，順便把所有的almost prime儲存到一個vector中
+
+接著以quick sort將vector的元素由大到小進行排序
+
+在輸入上限和下限後
+
+以binary search找到在vector中位於範圍內的數，並記錄其index
+
+然後根據上限和下限，我們就可以知道在這個範圍內有多少個almost prime
+
+最後再把數量輸出即可
+
