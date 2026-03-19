@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int dp[30000000] = {0}; // the max number is bugger than 530000000 !!!
+int dp[30000000] = {0}; // the max number is bigger than 530000000 !!!
 
 
 void get_cycle_length(int number, int& cnt)
