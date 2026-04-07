@@ -10,6 +10,7 @@ int main()
 	
 	long long int n;
 	int testCase;
+	
 	cin >> testCase;
 	while(testCase--)
 	{
@@ -19,16 +20,16 @@ int main()
 			continue;
 		}
 		
-		long long int res = 0;
-		long long int j;
 		long long int nSqrt = (long long int)sqrt(n);
+		long long int res = 0; // ans
+		long long int j; // right bound of current value
 		
 		for(long long int i = 1; i <= nSqrt; i++){
 			res = res + (n/i);
 		}
 		
 		for(long long int i = nSqrt+1; i <= n; i = j + 1){
-			j = n / (n/i);
+			j = n / (n/i); // get the rightest bound, let k = i~j, their values are identical
 			res = res + (j-i+1) * (n/i);
 		}
 		cout << res << '\n';
