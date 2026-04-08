@@ -3,10 +3,9 @@
 #include <iomanip>
 using namespace std;
 
+double p, q, r, s, t, u; // equation coefficient
 
-// p∗e^−x + q∗sin(x) + r∗cos(x) + s∗tan(x) + t∗x^2 + u = 0
-double p, q, r, s, t, u;
-
+// get the value of equation
 double equation(const double& x){
 	return p * exp((-x)) + q * sin(x) + r * cos(x) + s * tan(x) + t * x * x + u;
 }
@@ -39,17 +38,19 @@ int main()
 	cout.sync_with_stdio(false);
 	
 	
-	double left, right;
+	double left, right; // value of 0.0 and 1.0
 	while(cin >> p >> q >> r >> s >> t >> u)
 	{
 		left = equation(0.0);
 		if(fabs(left) < 1e-9){
+			// special case
 			cout << "0.0000\n";
 			continue;
 		}
 		
 		right = equation(1.0);
 		if(fabs(right) < 1e-9){
+			// special case
 			cout << "1.0000\n";
 			continue;
 		}
